@@ -246,7 +246,7 @@ footer p + p {
 }
 
 ```css
-/* Nombre y subtítulo de NeuroMentes */
+/* Logotipo de NeuroMentes */
 
 .logo {
   display: flex;
@@ -268,5 +268,12 @@ footer p + p {
   font-size: 0.65rem;
   font-weight: normal;
   line-height: 1.3;
+}
+
+/* Separación del apartado de valores */
+
+.titulo-valores {
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
 ```
