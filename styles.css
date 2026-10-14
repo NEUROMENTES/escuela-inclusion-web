@@ -1,4 +1,8 @@
 
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -16,33 +21,56 @@ body {
   line-height: 1.7;
 }
 
+/* ========================================
+   ENCABEZADO Y LOGOTIPO
+======================================== */
+
 .encabezado {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 20px 7%;
-  background: white;
+  gap: 24px;
+  padding: 18px 7%;
+  background: #ffffff;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 2px 12px #162c4510;
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #243e70;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
   text-decoration: none;
+  line-height: 1.2;
 }
 
-.logo span {
+.logo-titulo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #243e70;
+  letter-spacing: 1px;
+}
+
+.logo-subtitulo {
+  display: block;
+  max-width: 280px;
+  margin-top: 5px;
+  font-size: 0.68rem;
+  font-weight: normal;
+  line-height: 1.35;
   color: #169c91;
 }
 
+/* MENÚ DE NAVEGACIÓN */
+
 nav {
   display: flex;
-  gap: 22px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -50,11 +78,17 @@ nav a {
   text-decoration: none;
   color: #263449;
   font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
 }
 
 nav a:hover {
   color: #169c91;
 }
+
+/* ========================================
+   PORTADA PRINCIPAL
+======================================== */
 
 .hero {
   min-height: 490px;
@@ -89,27 +123,43 @@ h1 {
   margin-bottom: 28px;
 }
 
+/* ========================================
+   BOTONES
+======================================== */
+
 .boton {
   display: inline-block;
   background: #168e86;
-  color: white;
-  padding: 14px 23px;
+  color: #ffffff;
+  padding: 13px 23px;
   border: none;
   border-radius: 9px;
   text-decoration: none;
+  font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
+  text-align: center;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .boton:hover {
   background: #106e69;
+  transform: translateY(-2px);
 }
+
+.boton-servicios {
+  margin-top: 30px;
+}
+
+/* ========================================
+   SECCIONES GENERALES
+======================================== */
 
 .seccion {
   padding: 75px 9%;
   text-align: center;
+  scroll-margin-top: 100px;
 }
 
 h2 {
@@ -119,263 +169,260 @@ h2 {
   margin-bottom: 24px;
 }
 
-.centrado {
-  max-width: 760px;
-  margin: 0 auto;
+h3 {
+  color: #21365e;
+  line-height: 1.35;
 }
+
+.centrado {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo-valores {
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+
+/* ========================================
+   TARJETAS
+======================================== */
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 35px;
+  text-align: left;
+  align-items: stretch;
+}
+
+.tarjeta {
+  min-width: 0;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e7edf4;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px #21365e0a;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px #21365e14;
+}
+
+.icono {
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.tarjeta h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.tarjeta p {
+  margin-bottom: 12px;
+}
+
+.tarjeta p:last-child {
+  margin-bottom: 0;
+}
+
+.tarjeta ul {
+  padding-left: 22px;
+  margin-top: 8px;
+}
+
+.tarjeta li {
+  margin-bottom: 5px;
+}
+
+/* ========================================
+   IDENTIDAD INSTITUCIONAL
+======================================== */
+
+.identidad {
+  background: #ffffff;
+}
+
+/* ========================================
+   SERVICIOS
+======================================== */
 
 .servicios {
   background: #f5f8fc;
 }
 
-.tarjetas {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 35px;
-  text-align: left;
-}
-
-.tarjeta {
-  padding: 28px;
-  background: white;
-  border: 1px solid #e7edf4;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px #21365e0a;
-}
-
-.icono {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.tarjeta h3 {
-  color: #21365e;
-  margin-bottom: 10px;
-}
-
-.nota {
-  color: #69778a;
-  font-size: 0.88rem;
-  margin-top: 20px;
-}
-
-.contacto {
-  max-width: 850px;
-  margin: auto;
-}
-
-.contacto > p:not(.etiqueta) {
-  margin-bottom: 24px;
-}
-
-form {
-  max-width: 600px;
-  margin: 30px auto 0;
-  text-align: left;
-}
-
-label {
-  display: block;
-  margin: 17px 0 7px;
-  font-weight: 700;
-}
-
-input,
-textarea {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #ccd6e2;
-  border-radius: 8px;
-  background: #fff;
-  color: #263449;
-  font: inherit;
-}
-
-input:focus,
-textarea:focus {
-  outline: 2px solid #168e86;
-  border-color: #168e86;
-}
-
-textarea {
-  resize: vertical;
-}
-
-form .boton {
-  margin-top: 20px;
-  width: 100%;
-}
-
-footer {
-  padding: 30px 7%;
-  text-align: center;
-  color: white;
-  background: #21365e;
-}
-
-footer p + p {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-@media (max-width: 650px) {
-  .encabezado {
-    flex-direction: column;
-    padding: 16px 5%;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .hero {
-    padding: 65px 7%;
-    min-height: 420px;
-  }
-
-  .seccion {
-    padding: 55px 7%;
-  }
-
-  .tarjetas {
-    grid-template-columns: 1fr;
-  }
-}
-
-```css
-/* Logotipo de NeuroMentes */
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-decoration: none;
-  line-height: 1.2;
-}
-
-.logo-titulo {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.logo-subtitulo {
-  display: block;
-  max-width: 280px;
-  margin-top: 4px;
-  font-size: 0.65rem;
-  font-weight: normal;
-  line-height: 1.3;
-}
-
-/* Separación del apartado de valores */
-
-.titulo-valores {
-  margin-top: 40px;
-  margin-bottom: 25px;
-}
-```
-
-/* SUBTÍTULO DEL LOGO */
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-decoration: none;
-  line-height: 1.2;
-}
-
-.logo-titulo {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.logo-subtitulo {
-  display: block;
-  max-width: 280px;
-  margin-top: 4px;
-  font-size: 0.65rem;
-  font-weight: normal;
-  line-height: 1.3;
-}
-
-/* TÍTULOS Y NUEVOS APARTADOS */
-.titulo-valores {
-  margin-top: 40px;
-  margin-bottom: 25px;
-}
-
-.boton-servicios {
-  margin-top: 30px;
-}
-
-.detalle-servicios,
-.estimulacion {
-  scroll-margin-top: 30px;
+.detalle-servicios {
+  background: #ffffff;
 }
 
 .nivel {
-  scroll-margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nivel .boton {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+#nivel-basico,
+#nivel-intermedio,
+#regularizacion,
+#estimulacion {
+  scroll-margin-top: 110px;
+}
+
+.estimulacion {
+  background: #f5f8fc;
 }
 
 .nota-servicios,
 .nota-contacto {
   max-width: 800px;
   margin: 25px auto 0;
+  color: #69778a;
+  font-size: 0.92rem;
   text-align: center;
   line-height: 1.7;
 }
 
-/* FORMULARIO DE CONTACTO */
+/* ========================================
+   BENEFICIOS
+======================================== */
+
+.beneficios {
+  background: #ffffff;
+}
+
+/* ========================================
+   FORMULARIO DE CONTACTO
+======================================== */
+
+.contacto {
+  max-width: 100%;
+  margin: 0 auto;
+  background: #f5f8fc;
+}
+
+.contacto > p:not(.etiqueta) {
+  margin-bottom: 20px;
+}
+
 #formulario {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   max-width: 600px;
   margin: 30px auto 0;
+  text-align: left;
+}
+
+#formulario label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
 }
 
 #formulario input,
 #formulario textarea {
+  display: block;
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
+  padding: 13px;
+  border: 1px solid #ccd6e2;
   border-radius: 8px;
+  background: #ffffff;
+  color: #263449;
   font: inherit;
+}
+
+#formulario input:focus,
+#formulario textarea:focus {
+  outline: 2px solid #168e86;
+  border-color: #168e86;
 }
 
 #formulario textarea {
   resize: vertical;
-}
-
-#formulario label {
-  font-weight: 600;
+  min-height: 120px;
 }
 
 #formulario button {
-  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
 }
 
-/* DESPLAZAMIENTO SUAVE ENTRE SECCIONES */
-html {
-  scroll-behavior: smooth;
+#formulario button:focus-visible,
+.boton:focus-visible,
+nav a:focus-visible {
+  outline: 3px solid #21365e;
+  outline-offset: 3px;
 }
 
-/* ADAPTACIÓN A CELULARES */
-@media (max-width: 768px) {
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+.pie {
+  padding: 30px 7%;
+  text-align: center;
+  color: #ffffff;
+  background: #21365e;
+}
+
+.pie p + p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ========================================
+   TABLETAS
+======================================== */
+
+@media (max-width: 950px) {
   .encabezado {
-    flex-direction: column;
-    gap: 15px;
+    padding: 18px 5%;
+    gap: 18px;
   }
 
-  .encabezado nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  nav {
     gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.88rem;
+  }
+
+  .seccion {
+    padding: 65px 6%;
+  }
+
+  .tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+  html {
+    scroll-padding-top: 160px;
+  }
+
+  .encabezado {
+    position: relative;
+    flex-direction: column;
+    gap: 15px;
+    padding: 18px 5%;
   }
 
   .logo {
@@ -387,8 +434,55 @@ html {
     max-width: 100%;
   }
 
+  nav {
+    justify-content: center;
+    gap: 10px 15px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    min-height: 420px;
+    padding: 60px 7%;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .hero-contenido > p:not(.etiqueta) {
+    font-size: 1rem;
+  }
+
+  .seccion {
+    padding: 55px 6%;
+    scroll-margin-top: 20px;
+  }
+
   .tarjetas {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .tarjeta {
+    padding: 23px;
+  }
+
+  .boton {
+    max-width: 100%;
+  }
+
+  .nivel .boton {
+    align-self: stretch;
+  }
+
+  #nivel-basico,
+  #nivel-intermedio,
+  #regularizacion,
+  #estimulacion {
+    scroll-margin-top: 20px;
   }
 }
 
