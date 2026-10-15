@@ -486,3 +486,45 @@ nav a:focus-visible {
   }
 }
 
+
+/* LISTAS DE REQUISITOS */
+.requisitos ul {
+  padding-left: 22px;
+  line-height: 1.9;
+}
+
+.requisitos li {
+  margin-bottom: 5px;
+}
+
+/* PRECIOS */
+.precio {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+/* MENSAJE FINAL DEL PROCESO */
+.mensaje-objetivo {
+  max-width: 850px;
+  margin: 35px auto 0;
+  padding: 25px;
+  text-align: center;
+  border-radius: 16px;
+  background: #eef8f2;
+}
+
+.mensaje-objetivo h3 {
+  margin: 10px 0;
+}
+
+.mensaje-objetivo p {
+  line-height: 1.7;
+}
+
+/* CORREO ELECTRÓNICO */
+.redes a {
+  overflow-wrap: anywhere;
+}
+
+
