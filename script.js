@@ -1,7 +1,7 @@
 
 // CAMBIA este número por el WhatsApp de tu escuela.
 // Usa el código del país y el número, sin +, espacios ni guiones.
-const telefonoEscuela = "521234567890";
+const telefonoEscuela = "9871021891";
 
 document.getElementById("anio").textContent =
   new Date().getFullYear();
