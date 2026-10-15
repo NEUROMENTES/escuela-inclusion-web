@@ -1,264 +1,463 @@
-
-/* ========================================
+```css
+/* ==============================
    CONFIGURACIÓN GENERAL
-======================================== */
+================================= */
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 110px;
+  scroll-padding-top: 100px;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #263449;
-  background: #ffffff;
   line-height: 1.7;
+  color: #263449;
+  background-color: #ffffff;
 }
 
-/* ========================================
-   ENCABEZADO Y LOGOTIPO
-======================================== */
+img,
+video {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: #087e8b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #075b66;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+  color: #183153;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul {
+  padding-left: 22px;
+  margin: 12px 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+.centrado {
+  max-width: 900px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+
+.etiqueta {
+  color: #078b96;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* ==============================
+   ENCABEZADO Y MENÚ
+================================= */
 
 .encabezado {
+  width: 100%;
+  min-height: 85px;
+  padding: 15px 5%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 18px 7%;
-  background: #ffffff;
+  align-items: center;
+  gap: 25px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 12px #162c4510;
+  z-index: 1000;
 }
 
-.logo {
+.encabezado .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.logo-texto {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-shrink: 0;
-  text-decoration: none;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .logo-titulo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #243e70;
+  color: #087e8b;
+  font-size: 1.35rem;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 
 .logo-subtitulo {
-  display: block;
-  max-width: 280px;
-  margin-top: 5px;
-  font-size: 0.68rem;
-  font-weight: normal;
-  line-height: 1.35;
-  color: #169c91;
+  color: #596579;
+  font-size: 0.7rem;
 }
 
-/* MENÚ DE NAVEGACIÓN */
-
-nav {
+.encabezado nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 8px 16px;
 }
 
-nav a {
-  text-decoration: none;
+.encabezado nav a {
   color: #263449;
+  font-size: 0.88rem;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
-nav a:hover {
-  color: #169c91;
+.encabezado nav a:hover {
+  color: #078b96;
 }
 
-/* ========================================
-   PORTADA PRINCIPAL
-======================================== */
+/* ==============================
+   BOTONES
+================================= */
+
+.boton {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #087e8b;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.boton:hover {
+  background-color: #075b66;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* ==============================
+   PORTADA
+================================= */
 
 .hero {
-  min-height: 490px;
+  min-height: 560px;
+  padding: 90px 8%;
   display: flex;
   align-items: center;
-  padding: 80px 9%;
-  background: linear-gradient(120deg, #e9f6f6, #f0f2ff);
+  justify-content: flex-start;
+  background-color: #183153;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  isolation: isolate;
 }
 
 .hero-contenido {
   max-width: 760px;
+  position: relative;
+  z-index: 2;
 }
 
-.etiqueta {
-  color: #138e86;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  font-weight: 800;
-  margin-bottom: 12px;
+.hero .etiqueta {
+  text-align: left;
+  color: #c3f3ed;
 }
 
-h1 {
-  font-size: clamp(2.3rem, 5vw, 4rem);
-  line-height: 1.15;
-  color: #21365e;
+.hero h1 {
+  color: #ffffff;
   margin-bottom: 22px;
 }
 
-.hero-contenido > p:not(.etiqueta) {
-  max-width: 650px;
+.hero p {
+  max-width: 700px;
+  color: #ffffff;
   font-size: 1.1rem;
   margin-bottom: 28px;
 }
 
-/* ========================================
-   BOTONES
-======================================== */
-
-.boton {
-  display: inline-block;
-  background: #168e86;
-  color: #ffffff;
-  padding: 13px 23px;
-  border: none;
-  border-radius: 9px;
-  text-decoration: none;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+.hero .boton {
+  background-color: #ffffff;
+  color: #087e8b;
 }
 
-.boton:hover {
-  background: #106e69;
-  transform: translateY(-2px);
+.hero .boton:hover {
+  background-color: #dff7f4;
+}
+
+/* ==============================
+   SECCIONES GENERALES
+================================= */
+
+.seccion {
+  padding: 75px 7%;
+}
+
+.seccion > p:not(.etiqueta) {
+  line-height: 1.9;
+}
+
+.seccion h2 {
+  margin-bottom: 25px;
+}
+
+/* ==============================
+   TARJETAS
+================================= */
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.tarjeta {
+  min-width: 0;
+  padding: 28px 24px;
+  background-color: #ffffff;
+  border: 1px solid #e5edf1;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(24, 49, 83, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(24, 49, 83, 0.12);
+}
+
+.tarjeta p {
+  color: #526174;
+}
+
+.tarjeta h3 {
+  color: #183153;
+}
+
+.icono {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+/* ==============================
+   IDENTIDAD: MISIÓN Y VISIÓN
+================================= */
+
+.identidad {
+  background-color: #f2f8fb;
+}
+
+.identidad .tarjetas {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.titulo-valores {
+  margin-top: 55px;
+}
+
+.identidad .tarjetas:nth-of-type(2) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ==============================
+   IMÁGENES DESTACADAS
+================================= */
+
+.imagen-destacada {
+  width: 100%;
+  padding: 30px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.imagen-destacada img {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 650px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.imagen-final {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background-color: #f2f8fb;
+}
+
+/* ==============================
+   NUESTROS SERVICIOS
+================================= */
+
+.servicios {
+  background-color: #ffffff;
+}
+
+.servicios .tarjetas {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.imagen-servicios-en-seccion {
+  margin: 35px auto 15px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.imagen-servicios-en-seccion img {
+  max-width: 1000px;
 }
 
 .boton-servicios {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
-/* ========================================
-   SECCIONES GENERALES
-======================================== */
+/* ==============================
+   VIDEOS
+================================= */
 
-.seccion {
-  padding: 75px 9%;
+.video-servicios {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #f2f8fb;
+  border-radius: 15px;
   text-align: center;
-  scroll-margin-top: 100px;
 }
 
-h2 {
-  color: #21365e;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  line-height: 1.25;
-  margin-bottom: 24px;
+.video-servicios h3 {
+  color: #183153;
+  margin-bottom: 15px;
 }
 
-h3 {
-  color: #21365e;
-  line-height: 1.35;
+.video-servicios p {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.centrado {
+.video-servicios video,
+.tarjeta-audio-info video,
+.tarjeta-inscripcion-video video {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 12px;
+  background-color: #111111;
+}
+
+.video-ayuda {
+  color: #687587;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+/* ==============================
+   ESTIMULACIÓN COGNITIVA
+================================= */
+
+.seccion-audio-info {
+  padding: 70px 6%;
+  background-color: #ffffff;
+}
+
+.tarjeta-audio-info {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 35px;
+  background-color: #f2f8fb;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(24, 49, 83, 0.06);
+}
+
+.tarjeta-audio-info h2 {
+  color: #183153;
+}
+
+.tarjeta-audio-info p {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.titulo-valores {
-  margin-top: 45px;
-  margin-bottom: 25px;
-}
-
-/* ========================================
-   TARJETAS
-======================================== */
-
-.tarjetas {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 35px;
-  text-align: left;
-  align-items: stretch;
-}
-
-.tarjeta {
-  min-width: 0;
-  padding: 28px;
-  background: #ffffff;
-  border: 1px solid #e7edf4;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px #21365e0a;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.tarjeta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px #21365e14;
-}
-
-.icono {
-  font-size: 2rem;
-  line-height: 1.4;
-  margin-bottom: 12px;
-}
-
-.tarjeta h3 {
-  margin-bottom: 12px;
-  font-size: 1.2rem;
-}
-
-.tarjeta p {
-  margin-bottom: 12px;
-}
-
-.tarjeta p:last-child {
-  margin-bottom: 0;
-}
-
-.tarjeta ul {
-  padding-left: 22px;
-  margin-top: 8px;
-}
-
-.tarjeta li {
-  margin-bottom: 5px;
-}
-
-/* ========================================
-   IDENTIDAD INSTITUCIONAL
-======================================== */
-
-.identidad {
-  background: #ffffff;
-}
-
-/* ========================================
-   SERVICIOS
-======================================== */
-
-.servicios {
-  background: #f5f8fc;
-}
+/* ==============================
+   NIVEL EDUCATIVO
+================================= */
 
 .detalle-servicios {
-  background: #ffffff;
+  background-color: #f2f8fb;
+}
+
+.detalle-servicios .tarjetas {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .nivel {
@@ -269,262 +468,415 @@ h3 {
 
 .nivel .boton {
   margin-top: auto;
-  align-self: flex-start;
 }
 
-#nivel-basico,
-#nivel-intermedio,
-#regularizacion,
-#estimulacion {
-  scroll-margin-top: 110px;
+.imagen-nivel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e5edf1;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(24, 49, 83, 0.07);
+}
+
+.imagen-nivel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* ==============================
+   REGULARIZACIÓN Y ESTIMULACIÓN
+================================= */
+
+#regularizacion {
+  background-color: #ffffff;
 }
 
 .estimulacion {
-  background: #f5f8fc;
+  background-color: #f2f8fb;
 }
 
-.nota-servicios,
-.nota-contacto {
-  max-width: 800px;
-  margin: 25px auto 0;
-  color: #69778a;
-  font-size: 0.92rem;
-  text-align: center;
-  line-height: 1.7;
+.nota-servicios {
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 18px 22px;
+  border-left: 4px solid #087e8b;
+  background-color: #eaf6f7;
+  color: #425366;
+  border-radius: 5px;
 }
 
-/* ========================================
+/* ==============================
    BENEFICIOS
-======================================== */
+================================= */
 
 .beneficios {
-  background: #ffffff;
+  background-color: #ffffff;
 }
 
-/* ========================================
+.beneficios .tarjetas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ==============================
+   VIDEO: ¿POR QUÉ ELEGIRNOS?
+================================= */
+
+.seccion-inscripcion-video {
+  padding: 70px 6%;
+  background-color: #f2f8fb;
+}
+
+.tarjeta-inscripcion-video {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(24, 49, 83, 0.07);
+}
+
+.tarjeta-inscripcion-video h2 {
+  color: #183153;
+}
+
+.tarjeta-inscripcion-video p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==============================
+   REQUISITOS
+================================= */
+
+.requisitos {
+  background-color: #ffffff;
+}
+
+.requisitos .tarjetas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ==============================
+   TARIFAS
+================================= */
+
+.tarifas {
+  background-color: #f2f8fb;
+}
+
+.tarifas .tarjetas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.precio {
+  color: #087e8b !important;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+/* ==============================
+   PROCESO DE ATENCIÓN
+================================= */
+
+.proceso {
+  background-color: #ffffff;
+}
+
+.proceso .tarjetas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mensaje-objetivo {
+  max-width: 850px;
+  margin: 40px auto 0;
+  padding: 30px;
+  text-align: center;
+  background-color: #eaf6f7;
+  border-radius: 15px;
+  border: 1px solid #d5eeee;
+}
+
+.mensaje-objetivo h3 {
+  color: #087e8b;
+}
+
+.mensaje-objetivo p {
+  margin-bottom: 0;
+}
+
+/* ==============================
+   REDES SOCIALES
+================================= */
+
+.redes {
+  background-color: #f2f8fb;
+}
+
+.redes .tarjetas {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ==============================
    FORMULARIO DE CONTACTO
-======================================== */
+================================= */
 
 .contacto {
-  max-width: 100%;
-  margin: 0 auto;
-  background: #f5f8fc;
+  background-color: #ffffff;
 }
 
-.contacto > p:not(.etiqueta) {
-  margin-bottom: 20px;
+.contacto form {
+  max-width: 700px;
+  margin: 35px auto 0;
+  padding: 35px;
+  background-color: #f7fafc;
+  border: 1px solid #e5edf1;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(24, 49, 83, 0.06);
 }
 
-#formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 600px;
-  margin: 30px auto 0;
-  text-align: left;
-}
-
-#formulario label {
+.contacto label {
   display: block;
-  margin-top: 10px;
-  font-weight: 700;
+  margin: 18px 0 8px;
+  color: #183153;
+  font-weight: bold;
 }
 
-#formulario input,
-#formulario textarea {
+.contacto input,
+.contacto textarea {
   display: block;
   width: 100%;
-  padding: 13px;
-  border: 1px solid #ccd6e2;
+  padding: 13px 15px;
+  border: 1px solid #cbd6df;
   border-radius: 8px;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #263449;
-  font: inherit;
+  outline: none;
 }
 
-#formulario input:focus,
-#formulario textarea:focus {
-  outline: 2px solid #168e86;
-  border-color: #168e86;
+.contacto input:focus,
+.contacto textarea:focus {
+  border-color: #087e8b;
+  box-shadow: 0 0 0 3px rgba(8, 126, 139, 0.12);
 }
 
-#formulario textarea {
+.contacto textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-#formulario button {
-  margin-top: 15px;
-  width: 100%;
+.contacto button {
+  margin-top: 22px;
 }
 
-#formulario button:focus-visible,
-.boton:focus-visible,
-nav a:focus-visible {
-  outline: 3px solid #21365e;
-  outline-offset: 3px;
+.nota-contacto {
+  max-width: 700px;
+  margin: 18px auto 0;
+  text-align: center;
+  color: #687587;
+  font-size: 0.9rem;
 }
 
-/* ========================================
+/* ==============================
    PIE DE PÁGINA
-======================================== */
+================================= */
 
 .pie {
-  padding: 30px 7%;
-  text-align: center;
+  padding: 30px 5%;
+  background-color: #183153;
   color: #ffffff;
-  background: #21365e;
+  text-align: center;
 }
 
-.pie p + p {
+.pie p {
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.pie p:last-child {
   font-size: 0.9rem;
   opacity: 0.85;
 }
 
-/* ========================================
-   TABLETAS
-======================================== */
+/* ==============================
+   TABLET
+================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
   .encabezado {
-    padding: 18px 5%;
-    gap: 18px;
-  }
-
-  nav {
-    gap: 12px;
-  }
-
-  nav a {
-    font-size: 0.88rem;
-  }
-
-  .seccion {
-    padding: 65px 6%;
-  }
-
-  .tarjetas {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* ========================================
-   CELULARES
-======================================== */
-
-@media (max-width: 650px) {
-  html {
-    scroll-padding-top: 160px;
-  }
-
-  .encabezado {
-    position: relative;
     flex-direction: column;
     gap: 15px;
-    padding: 18px 5%;
   }
 
-  .logo {
-    align-items: center;
-    text-align: center;
-  }
-
-  .logo-subtitulo {
-    max-width: 100%;
-  }
-
-  nav {
+  .encabezado nav {
     justify-content: center;
-    gap: 10px 15px;
   }
 
-  nav a {
-    font-size: 0.9rem;
+  .tarjetas,
+  .beneficios .tarjetas,
+  .requisitos .tarjetas,
+  .tarifas .tarjetas,
+  .proceso .tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .identidad .tarjetas:nth-of-type(2) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
-    min-height: 420px;
+    min-height: 500px;
+  }
+}
+
+/* ==============================
+   CELULARES
+================================= */
+
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 150px;
+  }
+
+  section {
+    scroll-margin-top: 150px;
+  }
+
+  .encabezado {
+    padding: 12px 4%;
+    gap: 12px;
+  }
+
+  .encabezado .logo {
+    gap: 8px;
+  }
+
+  .logo-img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo-titulo {
+    font-size: 1.15rem;
+  }
+
+  .logo-subtitulo {
+    font-size: 0.65rem;
+  }
+
+  .encabezado nav {
+    gap: 8px 12px;
+  }
+
+  .encabezado nav a {
+    font-size: 0.78rem;
+  }
+
+  .hero {
+    min-height: 480px;
     padding: 60px 7%;
+    background-position: center;
   }
 
-  h1 {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-
-  .hero-contenido > p:not(.etiqueta) {
+  .hero p {
     font-size: 1rem;
   }
 
   .seccion {
-    padding: 55px 6%;
-    scroll-margin-top: 20px;
+    padding: 50px 5%;
   }
 
-  .tarjetas {
-    grid-template-columns: minmax(0, 1fr);
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .tarjetas,
+  .identidad .tarjetas,
+  .identidad .tarjetas:nth-of-type(2),
+  .servicios .tarjetas,
+  .detalle-servicios .tarjetas,
+  .beneficios .tarjetas,
+  .requisitos .tarjetas,
+  .tarifas .tarjetas,
+  .proceso .tarjetas,
+  .redes .tarjetas {
+    grid-template-columns: 1fr;
     gap: 18px;
   }
 
   .tarjeta {
-    padding: 23px;
+    padding: 23px 20px;
+  }
+
+  .imagen-destacada {
+    padding: 18px 4%;
+  }
+
+  .imagen-destacada img {
+    max-height: none;
+    border-radius: 8px;
+  }
+
+  .imagen-servicios-en-seccion {
+    padding: 0;
+    margin-top: 25px;
+  }
+
+  .imagen-nivel {
+    padding: 10px;
+  }
+
+  .imagen-nivel img {
+    min-height: 0;
+    max-height: none;
+  }
+
+  .video-servicios,
+  .tarjeta-audio-info,
+  .tarjeta-inscripcion-video {
+    padding: 22px 16px;
+  }
+
+  .seccion-audio-info,
+  .seccion-inscripcion-video {
+    padding: 45px 5%;
+  }
+
+  .contacto form {
+    padding: 23px 18px;
   }
 
   .boton {
     max-width: 100%;
   }
+}
 
-  .nivel .boton {
-    align-self: stretch;
+/* ==============================
+   ACCESIBILIDAD
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  #nivel-basico,
-  #nivel-intermedio,
-  #regularizacion,
-  #estimulacion {
-    scroll-margin-top: 20px;
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
-
-
-/* LISTAS DE REQUISITOS */
-.requisitos ul {
-  padding-left: 22px;
-  line-height: 1.9;
-}
-
-.requisitos li {
-  margin-bottom: 5px;
-}
-
-/* PRECIOS */
-.precio {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 12px 0;
-}
-
-/* MENSAJE FINAL DEL PROCESO */
-.mensaje-objetivo {
-  max-width: 850px;
-  margin: 35px auto 0;
-  padding: 25px;
-  text-align: center;
-  border-radius: 16px;
-  background: #eef8f2;
-}
-
-.mensaje-objetivo h3 {
-  margin: 10px 0;
-}
-
-.mensaje-objetivo p {
-  line-height: 1.7;
-}
-
-/* CORREO ELECTRÓNICO */
-.redes a {
-  overflow-wrap: anywhere;
-}
-
-
+```
